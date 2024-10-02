@@ -158,20 +158,5 @@
         };
     </script>
 
-    <script>
-        if (document.getElementById('choices-state')) {
-            var element = document.getElementById('choices-state');
-            const example = new Choices(element, {
-                searchEnabled: true,
-                shouldSort: false,
-            });
-        };
-        if (document.getElementById('choices-state-2')) {
-            var element = document.getElementById('choices-state-2');
-            const example = new Choices(element, {
-                searchEnabled: true,
-                shouldSort: false,
-            });
-        };
-    </script>
+ 
 @endsection

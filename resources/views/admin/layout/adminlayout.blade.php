@@ -22,6 +22,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('assets/css/argon-dashboard.css?v=2.0.4') }}" rel="stylesheet" />
     <link id="pagestyle" href="{{ asset('assets/css/pro.css') }}" rel="stylesheet" />
+    <link id="pagestyle" href="{{ asset('assets/css/glstyle.css') }}" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -239,6 +240,7 @@
             <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
             <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
             <script src="{{ asset('assets/js/plugins/flatpickr.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/imageUpload.js') }}"></script>
         
             <script>
                 var win = navigator.platform.indexOf('Win') > -1;

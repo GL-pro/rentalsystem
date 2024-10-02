@@ -1,5 +1,42 @@
 @extends('admin.layout.adminlayout')
 @section('admin_body_content')
+    <style>
+        .btn-group1 {
+            /* display: flex; */
+            /* gap: .6rem; */
+            /* flex-direction: column; */
+
+        }
+
+        .btn-check1 {
+            display: none;
+        }
+
+        .btn1 {
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #007bff;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn1:hover {
+            background-color: #5a5c69b3;
+            color: white;
+        }
+
+        .btn-check1:checked+.btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .badge-dot.badge-md i {
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
     <div class="container-fluid py-4">
         <form action="">
             <div class="row">
@@ -21,9 +58,19 @@
                             <h5 class="font-weight-bolder">Product Image</h5>
                             <div class="row">
                                 <div class="col-12">
-                                    <img class="w-100 border-radius-lg shadow-lg mt-3"
+                                    {{-- <img class="w-100 border-radius-lg shadow-lg mt-3"
                                         src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/product-page.jpg"
-                                        alt="product_image">
+                                        alt="product_image"> --}}
+                                        <div class="proof">
+                                            <div class="imgArea" data-title="">
+                                                <input type="file" name="screenshoot" id="screenshoot" hidden
+                                                    accept="image/*" />
+                                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                <h5>Upload image</h5>
+                                                <p>image size must be less than <span>2MB</span></p>
+                                            </div>
+                                            <button class="selectImage btn btn-dark mb-0" type="button">Select Image</button>
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +137,7 @@
                                 <div class="col-4">
                                     <label class="mt-2">Serial No</label>
                                     <input class="form-control" type="text" value="00000" />
-                                </div> 
+                                </div>
                                 <div class="col-4">
                                     <label class="mt-2">Machine Serial No</label>
                                     <input class="form-control" type="text" value="20" />
@@ -101,38 +148,35 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mt-3">
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="font-weight-bolder">Stock</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Opening</label>
-                                    <input class="form-control" type="text" value="" />
+                            <h5 class="font-weight-bolder">Current Condition</h5>
+                            {{-- <div class="row"> --}}
+                                <div class="btn-group1 mt-2 row p-0 justify-content-around" role="group" aria-label="Basic radio toggle group">
+                                    <input type="radio" class="btn-check1" id="btncheck1" name="btnradio"
+                                        autocomplete="off">
+                                    <label class="btn btn-warning col-5" for="btncheck1">Active</label>
+
+                                    <input type="radio" class="btn-check1" id="btncheck2" name="btnradio"
+                                        autocomplete="off">
+                                    <label class="btn btn-warning col-5" for="btncheck2">Damage</label>
+
+                                    <input type="radio" class="btn-check1" id="btncheck3" name="btnradio"
+                                        autocomplete="off">
+                                    <label class="btn btn-warning col-5" for="btncheck3">Service</label>
+
+                                    <input type="radio" class="btn-check1" id="btncheck4" name="btnradio"
+                                        autocomplete="off">
+                                    <label class="btn btn-warning col-5" for="btncheck4">Booked</label>
+
+                                    <input type="radio" class="btn-check1" id="btncheck5" name="btnradio"
+                                        autocomplete="off">
+                                    <label class="btn btn-warning col-5" for="btncheck5">Rented</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="mt-2">Active</label>
-                                    <input class="form-control" type="text" value="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="mt-2">Damage</label>
-                                    <input class="form-control" type="text" value="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="mt-2">Service</label>
-                                    <input class="form-control" type="text" value="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="mt-2">Booked</label>
-                                    <input class="form-control" type="text" value="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="mt-2">Rented</label>
-                                    <input class="form-control" type="text" value="" />
-                                </div>
-                            </div>
+                            {{-- </div> --}}
                         </div>
                     </div>
                 </div>
@@ -164,7 +208,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 row plan-item  " id="plansContainer" style="justify-content: space-between">
+                                <div class="col-12 row plan-item  " id="plansContainer"
+                                    style="justify-content: space-between">
                                     <div class="col-md-6 row mt-3 ">
                                         <div class="col-6">
                                             <label>Select Plan 1</label>
@@ -211,22 +256,22 @@
                                 <div class="col-md-4">
                                     <label class="mt-2">Doc Upload (Bill or Agreement)</label>
                                     <input class="form-control" type="file" value="" />
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </form>
     </div>
 
     <script>
         let planCount = 1;
-    
+
         document.getElementById('addPlanButton').addEventListener('click', function() {
             planCount++;
             let plansContainer = document.getElementById('plansContainer');
-    
+
             let newPlan = `
                 <div class="col-md-6 row mt-3 ">
                     <div class="col-6">
@@ -243,7 +288,7 @@
                     </div>
                 </div>
             `;
-    
+
             // Append the new plan to the plans container
             plansContainer.insertAdjacentHTML('beforeend', newPlan);
         });

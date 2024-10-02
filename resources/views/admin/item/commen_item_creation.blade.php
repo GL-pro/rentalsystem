@@ -1,5 +1,7 @@
 @extends('admin.layout.adminlayout')
 @section('admin_body_content')
+ 
+
     <div class="container-fluid py-4">
         <form action="">
             <div class="row">
@@ -21,9 +23,19 @@
                             <h5 class="font-weight-bolder">Product Image</h5>
                             <div class="row">
                                 <div class="col-12">
-                                    <img class="w-100 border-radius-lg shadow-lg mt-3"
+                                    {{-- <img class="w-100 border-radius-lg shadow-lg mt-3"
                                         src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/product-page.jpg"
-                                        alt="product_image">
+                                        alt="product_image"> --}}
+                                    <div class="proof">
+                                        <div class="imgArea" data-title="">
+                                            <input type="file" name="screenshoot" id="screenshoot" hidden
+                                                accept="image/*" />
+                                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                                            <h5>Upload image</h5>
+                                            <p>image size must be less than <span>2MB</span></p>
+                                        </div>
+                                        <button class="selectImage btn btn-dark mb-0" type="button">Select Image</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +165,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 row plan-item  " id="plansContainer" style="justify-content: space-between">
+                                <div class="col-12 row plan-item  " id="plansContainer"
+                                    style="justify-content: space-between">
                                     <div class="col-md-6 row mt-3 ">
                                         <div class="col-6">
                                             <label>Select Plan 1</label>
@@ -176,14 +189,14 @@
             </div>
         </form>
     </div>
-
+ 
     <script>
         let planCount = 1;
-    
+
         document.getElementById('addPlanButton').addEventListener('click', function() {
             planCount++;
             let plansContainer = document.getElementById('plansContainer');
-    
+
             let newPlan = `
                 <div class="col-md-6 row mt-3 ">
                     <div class="col-6">
@@ -200,7 +213,7 @@
                     </div>
                 </div>
             `;
-    
+
             // Append the new plan to the plans container
             plansContainer.insertAdjacentHTML('beforeend', newPlan);
         });

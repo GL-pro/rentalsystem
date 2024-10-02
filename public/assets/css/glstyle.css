@@ -1,0 +1,90 @@
+ /* Screenshoot Upload Box */
+ .proof {
+    border-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 5px 15px #c7c7c7, -5px -5px 24px #f9f9f9;
+}
+
+.imgArea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* gap: 10px; */
+    /* padding: 15px;
+    height: 270px;
+    width: 300px; */
+    background-color: rgb(242, 242, 242);
+    border-radius: 10px;
+}
+
+.imgArea i {
+    font-size: 50px;
+    margin-top: 10PX;
+}
+
+.imgArea h5 {
+    font-weight: 900;
+}
+
+.imgArea p {
+    color: grey;
+}
+
+.imgArea p span {
+    font-weight: 800;
+}
+
+.imgArea img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    background: #fff;
+    z-index: 3;
+}
+
+.imgArea::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0;
+    transition: .5s;
+}
+
+.imgArea.active:hover::before {
+    opacity: 1;
+}
+
+.selectImage {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.agreement {
+    padding: 15px 15px 30px;
+    margin: 15px 0 20px;
+}
+
+/* Screenshoot Upload Box */
